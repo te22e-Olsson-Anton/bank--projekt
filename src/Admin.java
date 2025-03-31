@@ -1,4 +1,27 @@
-package PACKAGE_NAME;
+public class Admin
+{
 
-public class Admin {
+    private String adminUsername;
+    private String adminPassword;
+    private boolean adminActive;
+
+    private String[][] adminAccounts = {{"kund1", "lösenord"}, {"kund2", "lösenord12345"}};
+
+
+    public Admin(String adminUsername, String adminPassword)
+    {
+        this.adminUsername = adminUsername;
+        this.adminPassword = adminPassword;
+        this.adminActive = true;
+    }
+
+    public boolean adminCheckPassword()
+    {
+        for (String[] account : adminAccounts) {
+            if (this.adminUsername.equals(account[0]) && this.adminPassword.equals(account[1])) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
