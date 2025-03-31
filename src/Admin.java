@@ -5,7 +5,7 @@ public class Admin
     private String adminPassword;
     private boolean adminActive;
 
-    private String[][] adminAccounts = {{"kund1", "lösenord"}, {"kund2", "lösenord12345"}};
+    private String[][] adminAccounts = {{"admin1", "lösenord"}, {"admin2", "lösenord12345"}};
 
 
     public Admin(String adminUsername, String adminPassword)
