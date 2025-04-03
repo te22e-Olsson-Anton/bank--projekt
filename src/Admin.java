@@ -1,27 +1,15 @@
-public class Admin
+public class Admin extends Account
 {
 
-    private String adminUsername;
-    private String adminPassword;
-    private boolean adminActive;
-
-    private String[][] adminAccounts = {{"admin1", "lösenord"}, {"admin2", "lösenord12345"}};
 
 
-    public Admin(String adminUsername, String adminPassword)
+    public Admin(String username, String password)
     {
-        this.adminUsername = adminUsername;
-        this.adminPassword = adminPassword;
-        this.adminActive = true;
+        super(username, password);
     }
 
-    public boolean adminCheckPassword()
+    void login()
     {
-        for (String[] account : adminAccounts) {
-            if (this.adminUsername.equals(account[0]) && this.adminPassword.equals(account[1])) {
-                return true;
-            }
-        }
-        return false;
+        System.out.println("inloggade som admin");
     }
 }

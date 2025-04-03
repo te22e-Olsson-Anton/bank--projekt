@@ -1,28 +1,13 @@
-public class User
+public class User extends Account
 {
 
-    private String username;
-    private String password;
-    private boolean active;
-
-    private String[][] accounts = {{"kund1", "lösenord"}, {"kund2", "lösenord12345"}};
 
     public User(String username, String password)
     {
-        this.username = username;
-        this.password = password;
-        this.active = true;
+        super(username, password);
     }
-
-    public boolean checkPassword()
+    void login()
     {
-        for (String[] account : accounts) {
-            if (this.username.equals(account[0]) && this.password.equals(account[1])) {
-                return true;
-            }
-        }
-        return false;
+        System.out.println("inloggade som användare");
     }
-
-
 }
