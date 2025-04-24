@@ -8,9 +8,12 @@ public class Main {
         ArrayList<Account> Accounts = new ArrayList<>();
 
         Accounts.add(new Admin("Anton", "anton123"));
+        Accounts.add(new User("kund", "lösenord123"));
+
+        boolean running = true;
 
         int choice;
-        while (true)
+        while (running)
         {
             System.out.println("\nVälkommen till (namnet på banken)\n");
             System.out.println("Vad vill du göra?");
@@ -25,7 +28,6 @@ public class Main {
                 String password = input.nextLine();
                 Accounts.add(new User(username, password));
                 System.out.println("Kontot skapat!");
-                continue;
             }
             else if (choice == 2)
             {
@@ -37,6 +39,8 @@ public class Main {
                 for(Account i: Accounts){
                     if(i.getPassword().equals(password) && i.getUsername().equals(username)){
                         i.login();
+                        running = false;
+
                     }
                 }
             }

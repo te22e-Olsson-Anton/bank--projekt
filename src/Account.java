@@ -1,17 +1,22 @@
-public class Account {
+public class Account
+{
     String username;
     String password;
-    Account(String username, String password){
+    Account(String username, String password)
+    {
         this.password = password;
         this.username = username;
     }
-    public String getPassword(){
+    public String getPassword()
+    {
         return password;
     }
-    public String getUsername(){
+    public String getUsername()
+    {
         return username;
     }
-    void login(){
+    void login()
+    {
 
     }
 }
