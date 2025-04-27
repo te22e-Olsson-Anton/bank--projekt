@@ -38,12 +38,20 @@ public class Main {
                 String username = input.nextLine();
                 System.out.print("Lösenord: ");
                 String password = input.nextLine();
-                for(Account i: Accounts){
+                boolean found = true;
+
+
+                for(Account i: Accounts)
+                {
                     if(i.getPassword().equals(password) && i.getUsername().equals(username)){
                         i.login();
-                        running = false;
+                        found = true;
+                        break;
 
                     }
+                }
+                if (!found) {
+                    System.out.println("Fel användarnamn eller lösenord. Försök igen.");
                 }
             }
 
