@@ -4,11 +4,13 @@ public class User extends Account
 {
     private double balance;
 
+    //konstruktor
     public User(String username, String password)
     {
         super(username, password);
-        this.balance = 0;
+        this.balance = 0; //nytt konto börjar med 0 kr
     }
+    //överskrider login för user
     void login()
     {
         System.out.println("inloggade som användare");
@@ -17,6 +19,7 @@ public class User extends Account
 
         while (loggedIn)
         {
+            //användar meny
             System.out.println("\nInloggad som användare: " + getUsername());
             System.out.println("1. Sätt in pengar");
             System.out.println("2. Ta ut pengar");
@@ -28,19 +31,23 @@ public class User extends Account
             switch (val)
             {
                 case 1:
+                    //sätta in pengar
                     System.out.print("Ange belopp att sätta in: ");
                     double deposit = scanner.nextDouble();
                     depositMoney(deposit);
                     break;
                 case 2:
+                    //ta ut pengar
                     System.out.print("Ange belopp att ta ut: ");
                     double withdraw = scanner.nextDouble();
                     withdrawMoney(withdraw);
                     break;
                 case 3:
+                    //kolla hur mycket pengar du har
                     System.out.println("Ditt saldo är: " + balance + " kr");
                     break;
                 case 4:
+                    //logar ut
                     loggedIn = false;
                     System.out.println("Loggar ut...");
                     break;
@@ -50,6 +57,7 @@ public class User extends Account
         }
     }
 
+    //sätta in pengar
     public void depositMoney(double amount)
     {
         if (amount > 0) {
@@ -59,7 +67,7 @@ public class User extends Account
             System.out.println("Beloppet måste vara positivt.");
         }
     }
-
+    //ta ut pengar
     public void withdrawMoney(double amount)
     {
         if (amount > 0 && amount <= balance) {
@@ -69,6 +77,7 @@ public class User extends Account
             System.out.println("Otillräckligt saldo eller ogiltigt belopp.");
         }
     }
+    //returnerar antalet pengar
     public double getBalance()
     {
         return balance;

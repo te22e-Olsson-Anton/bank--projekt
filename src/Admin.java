@@ -4,17 +4,20 @@ import java.util.Scanner;
 public class Admin extends Account
 {
 
-    private ArrayList<Account> accounts;
+    private ArrayList<Account> accounts; //lista över alla konton
 
+    //konstruktor
     public Admin(String username, String password)
     {
         super(username, password);
     }
 
+    //sätter listan med konton
     public void setAccounts(ArrayList<Account> accounts) {
         this.accounts = accounts;
     }
 
+    //överskrider login för admin
     void login()
     {
         System.out.println("Inloggad som admin");
@@ -23,6 +26,7 @@ public class Admin extends Account
 
         while (loggedIn)
         {
+            //admin meny
             System.out.println("\nAdmin-meny:");
             System.out.println("1. Visa alla konton och saldo");
             System.out.println("2. Logga ut");
@@ -32,10 +36,10 @@ public class Admin extends Account
             switch (val)
             {
                 case 1:
-                    showAccounts();
+                    showAccounts(); //visar alla konton
                     break;
                 case 2:
-                    loggedIn = false;
+                    loggedIn = false; //loggar ut
                     System.out.println("Loggar ut...");
                     break;
                 default:
