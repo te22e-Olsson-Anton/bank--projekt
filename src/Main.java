@@ -8,6 +8,8 @@ public class Main {
         ArrayList<Account> Accounts = new ArrayList<>();
 
         Accounts.add(new Admin("Anton", "anton123"));
+        ((Admin) Accounts.get(0)).setAccounts(Accounts);
+
         Accounts.add(new User("kund", "lösenord123"));
 
         boolean running = true;

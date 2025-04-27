@@ -69,6 +69,10 @@ public class User extends Account
             System.out.println("Otillräckligt saldo eller ogiltigt belopp.");
         }
     }
+    public double getBalance()
+    {
+        return balance;
+    }
 
 
 
