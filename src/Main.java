@@ -12,6 +12,7 @@ public class Main {
 
         Accounts.add(new User("kund", "lösenord123")); //skapar user
 
+
         boolean running = false;
 
         int choice;
