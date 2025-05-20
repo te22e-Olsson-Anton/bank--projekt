@@ -27,20 +27,20 @@ public class User extends Account
             System.out.println("4. Logga ut");
             System.out.print("Välj ett alternativ: ");
 
-            int val = scanner.nextInt();
-            switch (val)
+            int choice = scanner.nextInt();
+            switch (choice)
             {
                 case 1:
                     //sätta in pengar
                     System.out.print("Ange belopp att sätta in: ");
-                    double deposit = scanner.nextDouble();
-                    depositMoney(deposit);
+                    double depositAmount = scanner.nextDouble();
+                    depositMoney(depositAmount);
                     break;
                 case 2:
                     //ta ut pengar
                     System.out.print("Ange belopp att ta ut: ");
-                    double withdraw = scanner.nextDouble();
-                    withdrawMoney(withdraw);
+                    double withdrawAmount = scanner.nextDouble();
+                    withdrawMoney(withdrawAmount);
                     break;
                 case 3:
                     //kolla hur mycket pengar du har

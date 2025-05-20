@@ -32,8 +32,8 @@ public class Admin extends Account
             System.out.println("2. Logga ut");
             System.out.print("Välj ett alternativ: ");
 
-            int val = scanner.nextInt();
-            switch (val)
+            int choice = scanner.nextInt();
+            switch (choice)
             {
                 case 1:
                     showAccounts(); //visar alla konton
